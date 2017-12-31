@@ -5,7 +5,7 @@
 * Install
   This isn't on melpa yet.
 
-  Clone it somewhere like ~"~/.emacs.d/fork/flycheck-xcode"~.
+  Clone it somewhere like "~/.emacs.d/fork/flycheck-xcode".
 
   #+begin_src emacs-lisp :tangle yes
 (use-package flycheck-xcode
