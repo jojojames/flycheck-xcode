@@ -1,0 +1,19 @@
+#+TITLE: Flycheck Xcode
+
+* flycheck-xcode
+  Flycheck extension for Apple's Xcode.
+
+* Install
+  This isn't on melpa yet.
+
+  #+begin_src emacs-lisp :tangle yes
+(use-package flycheck-xcode
+  :load-path "~/.emacs.d/flycheck-xcode"
+  :ensure nil
+  :commands (flycheck-xcode-setup)
+  :init
+  (mapc
+   (lambda (x)
+     (add-hook x #'flycheck-xcode-setup))
+   '(c-mode-hook c++-mode-hook objc-mode-hook swift-mode-hook)))
+  #+end_src
