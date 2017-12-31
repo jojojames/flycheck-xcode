@@ -5,9 +5,11 @@
 * Install
   This isn't on melpa yet.
 
+  Clone it somewhere like ~"~/.emacs.d/fork/flycheck-xcode"~.
+
   #+begin_src emacs-lisp :tangle yes
 (use-package flycheck-xcode
-  :load-path "~/.emacs.d/flycheck-xcode"
+  :load-path "~/.emacs.d/fork/flycheck-xcode"
   :ensure nil
   :commands (flycheck-xcode-setup)
   :init
@@ -18,6 +20,7 @@
   #+end_src
 
 * Screenshots
+  These are screenshots comparing Emacs vs Xcode's display of errors/warnings.
 ** Objective-C
    [[./screenshots/emacs_objc.png]] [[./screenshots/xcode_objc.png]]
 
