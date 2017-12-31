@@ -3,6 +3,12 @@
 * flycheck-xcode
   Flycheck extension for Apple's Xcode.
 
+* Screenshots
+  Objc
+  [[./screenshots/emacs_objc.png]] [[./screenshots/xcode_objc.png]]
+
+  Swift
+  [[./screenshots/emacs_swift.png]] [[./screenshots/xcode_swift.png]]
 * Install
   This isn't on melpa yet.
 
