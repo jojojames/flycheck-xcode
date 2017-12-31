@@ -18,8 +18,8 @@
   #+end_src
 
 * Screenshots
-  Objc
-  [[./screenshots/emacs_objc.png]] [[./screenshots/xcode_objc.png]]
+** Objective-C
+   [[./screenshots/emacs_objc.png]] [[./screenshots/xcode_objc.png]]
 
-  Swift
-  [[./screenshots/emacs_swift.png]] [[./screenshots/xcode_swift.png]]
+** Swift
+   [[./screenshots/emacs_swift.png]] [[./screenshots/xcode_swift.png]]
