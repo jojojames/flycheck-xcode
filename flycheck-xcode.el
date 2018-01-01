@@ -64,6 +64,8 @@
 (flycheck-define-checker xcode
   "Flycheck plugin for for Apple's Xcode."
   :command ("xcodebuild"
+            "clean"
+            "build"
             (eval flycheck-xcode-extra-flags)
             (option "-sdk" flycheck-xcode-sdk)
             (option "-target" flycheck-xcode-target)
