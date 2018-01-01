@@ -68,7 +68,7 @@
 (flycheck-define-checker xcode
   "Flycheck plugin for for Apple's Xcode."
   :command ("xcodebuild"
-            (eval (flycheck-warm-or-cold-build))
+            (eval (flycheck-xcode-warm-or-cold-build))
             (eval flycheck-xcode-extra-flags)
             (option "-sdk" flycheck-xcode-sdk)
             (option "-target" flycheck-xcode-target)
@@ -93,7 +93,7 @@
   (interactive)
   (add-to-list 'flycheck-checkers 'xcode))
 
-(defun flycheck-warm-or-cold-build ()
+(defun flycheck-xcode-warm-or-cold-build ()
   "Return whether or not xcodebuild should be ran with clean."
   (if (flycheck-has-current-errors-p 'error)
       '("build")
