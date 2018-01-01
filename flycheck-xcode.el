@@ -23,8 +23,10 @@
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Commentary:
-
 ;; Flycheck extension for Apple's Xcode.
+;;
+;; (with-eval-after-load 'flycheck
+;;   (flycheck-xcode-setup))
 
 ;;; Code:
 
