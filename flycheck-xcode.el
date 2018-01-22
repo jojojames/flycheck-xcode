@@ -37,12 +37,15 @@
 
 ;; Compatibility
 (eval-and-compile
-  (when (version< emacs-version "26")
-    (with-no-warnings
-      (defalias 'if-let* #'if-let)
-      (defalias 'when-let* #'when-let)
-      (function-put #'if-let* 'lisp-indent-function 2)
-      (function-put #'when-let* 'lisp-indent-function 1))))
+  (with-no-warnings
+    (if (version< emacs-version "26")
+        (progn
+          (defalias 'flycheck-xcode-if-let* #'if-let)
+          (defalias 'flycheck-xcode-when-let* #'when-let)
+          (function-put #'flycheck-xcode-if-let* 'lisp-indent-function 2)
+          (function-put #'flycheck-xcode-when-let* 'lisp-indent-function 1))
+      (defalias 'flycheck-xcode-if-let* #'if-let*)
+      (defalias 'flycheck-xcode-when-let* #'when-let*))))
 
 ;;; Flycheck
 
@@ -105,8 +108,9 @@
 
 (defun flycheck-xcode--find-xcodeproj-directory (&optional _checker)
   "Return directory containing .xcodeproj file or nil if file is not found."
-  (when-let* ((xcode-project-path
-               (flycheck-xcode--project-find-xcodeproj buffer-file-name)))
+  (flycheck-xcode-when-let*
+      ((xcode-project-path
+        (flycheck-xcode--project-find-xcodeproj buffer-file-name)))
     (file-name-directory xcode-project-path)))
 
 (defun flycheck-xcode--project-find-xcodeproj (directory-or-file)
